@@ -35,7 +35,7 @@ export default async function Home({
             </div>
             <Skills />
           </div>
-          <a href={`/genevieve_perron_migneron_${lang}.pdf`} download={`genevieve_perron_migneron_${lang}.pdf`} className="button" target="_blank">
+          <a href={`/genevieve_perron-migneron_${lang}.pdf`} download={`genevieve_perron-migneron_${lang}.pdf`} className="button" target="_blank">
             <span>{intro.resume}</span>
           </a>
         </main>
