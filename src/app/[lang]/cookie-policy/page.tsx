@@ -7,15 +7,15 @@ export default async function CookiePolicyPage({ params: { lang } }: { params: {
 
   return (
     <main className="policy-page">
-      <h1>{cookiePolicy.title}</h1>
-      <p>{cookiePolicy.updated}</p>
-      <p>{cookiePolicy.intro}</p>
-      <ul>
+      <h1 className="intro-title text-xl md:text-xl font-bold mb-2"><span>_</span>{cookiePolicy.title}</h1>
+      <p className="text-sm mb-2">{cookiePolicy.updated}</p>
+      <p className="text-sm mb-2">{cookiePolicy.intro}</p>
+      <ul className="ml-2">
         {cookiePolicy.cookies.map(item => (
-          <li key={item}>{item}</li>
+          <li className="text-sm mb-2" key={item}>{item}</li>
         ))}
       </ul>
-      <p>{cookiePolicy.rights}</p>
+      <p className="text-sm mb-2">{cookiePolicy.rights}</p>
       <Link className="button" href={lang === 'en' ? '/' : `/${lang}`}>
         <span>{cookiePolicy.home}</span>
       </Link>
