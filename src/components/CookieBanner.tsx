@@ -44,10 +44,10 @@ export default function CookieBanner({ lang, content }: CookieBannerProps) {
         <Link href={lang === 'en' ? '/cookie-policy' : `/${lang}/cookie-policy`}>{content.cookies}</Link>
       </div>
       <div className="cookie-banner-actions">
-        <button type="button" className="button" onClick={() => saveConsent('accepted')}>
+        <button type="button" className="button w-full" onClick={() => saveConsent('accepted')}>
           <span>{content.accept}</span>
         </button>
-        <button type="button" className="button button--outline" onClick={() => saveConsent('rejected')}>
+        <button type="button" className="button w-full" onClick={() => saveConsent('rejected')}>
           <span>{content.reject}</span>
         </button>
       </div>
