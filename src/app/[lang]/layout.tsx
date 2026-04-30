@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -8,6 +7,9 @@ import { Locale, i18n } from '../../../i18n-config';
 import './../styles/index.scss'
 import SocialMediaLinks from '../../components/SocialMediaLinks';
 import BackgroundImages from '../../components/BackgroundImage';
+import CookieBanner from '@/components/CookieBanner';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getDictionary } from '@/lib/dictionary';
 
 export const metadata: Metadata = {
   title: 'Genevieve Perron Migneron - Portfolio',
@@ -24,7 +26,7 @@ export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }))
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params
 }: {
@@ -32,6 +34,7 @@ export default function RootLayout({
   params: { lang: Locale }
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
+  const { cookieBanner } = await getDictionary(params.lang)
 
   return (
     <html lang={params.lang}>
@@ -40,22 +43,8 @@ export default function RootLayout({
         <SocialMediaLinks />
         {children}
 
-        {gaId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}');
-              `}
-            </Script>
-          </>
-        ) : null}
+        <CookieBanner lang={params.lang} content={cookieBanner} />
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
         <Analytics />
         <SpeedInsights />
       </body>

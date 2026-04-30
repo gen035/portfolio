@@ -1,0 +1,52 @@
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  background: rgba(13, 13, 13, 0.95);
+  border: 1px solid #777;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 720px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+  }
+
+  &-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+.policy-page {
+  width: min(900px, 90%);
+  margin: 4rem auto;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #777;
+  border-radius: 12px;
+  padding: 2rem;
+
+  h1 { margin-bottom: 1rem; }
+  h2 { margin: 1rem 0 0.5rem; }
+  p, li { line-height: 1.6; }
+  ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+}

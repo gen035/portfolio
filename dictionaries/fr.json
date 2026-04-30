@@ -21,5 +21,53 @@
       "fields": "Remplir tous les champs"
     },
     "thankyou": "Merci beaucoup de m'avoir contacté ! Votre message a été transmis."
+  },
+  "cookieBanner": {
+    "title": "Préférences de témoins",
+    "description": "Nous utilisons des témoins et technologies similaires pour faire fonctionner ce site et mesurer l'audience avec Google Analytics. Vous pouvez accepter ou refuser les témoins analytiques non essentiels.",
+    "accept": "Accepter les témoins analytiques",
+    "reject": "Refuser les témoins analytiques",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Politique de témoins"
+  },
+  "privacyPolicy": {
+    "title": "Politique de confidentialité",
+    "updated": "Dernière mise à jour : 30 avril 2026",
+    "intro": "Cette politique explique la gestion des renseignements personnels sur ce site conformément à la Loi 25 du Québec.",
+    "sections": [
+      {
+        "title": "Renseignements collectés",
+        "text": "Lorsque vous utilisez le formulaire de contact, nous recueillons les informations soumises (nom, courriel, sujet et message). Nous recueillons aussi des données d’audience agrégées via Google Analytics si vous y consentez."
+      },
+      {
+        "title": "Pourquoi nous les recueillons",
+        "text": "Les données du formulaire servent uniquement à répondre à votre demande. Les données analytiques servent à comprendre le trafic et améliorer le contenu."
+      },
+      {
+        "title": "Consentement et témoins",
+        "text": "Les témoins analytiques non essentiels sont activés seulement après un consentement explicite dans la bannière. Vous pouvez refuser ces témoins sans impact sur l’accès au site."
+      },
+      {
+        "title": "Conservation et protection",
+        "text": "Les renseignements personnels sont conservés seulement pour la durée nécessaire aux fins prévues et protégés par des mesures de sécurité raisonnables."
+      },
+      {
+        "title": "Vos droits",
+        "text": "Vous pouvez demander l’accès, la rectification ou la suppression de vos renseignements personnels, sous réserve des exigences légales applicables."
+      }
+    ],
+    "contact": "Pour toute demande liée à la vie privée, utilisez la page contact.",
+    "home": "Retour à l’accueil"
+  },
+  "cookiePolicy": {
+    "title": "Politique de témoins",
+    "updated": "Dernière mise à jour : 30 avril 2026",
+    "intro": "Cette page explique comment les témoins sont utilisés sur ce site.",
+    "cookies": [
+      "Témoins essentiels : requis pour les fonctions de base du site.",
+      "Témoins analytiques (Google Analytics) : utilisés seulement avec votre consentement pour mesurer les visites et les interactions."
+    ],
+    "rights": "Vous pouvez accepter ou refuser les témoins analytiques via la bannière. Si vous avez déjà consenti, vous pouvez supprimer le stockage du navigateur pour réinitialiser votre choix.",
+    "home": "Retour à l’accueil"
   }
 }
