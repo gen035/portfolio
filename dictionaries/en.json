@@ -21,5 +21,53 @@
       "fields": "All fields are required."
     },
     "thankyou": "Thanks a bunch for contacting me! Your message has been beamed directly into my digital lair."
+  },
+  "cookieBanner": {
+    "title": "Cookie preferences",
+    "description": "We use cookies and similar technologies to run this website and measure traffic with Google Analytics. You can accept or refuse non-essential analytics cookies.",
+    "accept": "Accept analytics",
+    "reject": "Reject analytics",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: April 30, 2026",
+    "intro": "This policy explains how personal information is handled on this website in compliance with Quebec Law 25.",
+    "sections": [
+      {
+        "title": "What we collect",
+        "text": "When you use the contact form, we collect the information you submit (name, email, subject, and message). We also collect aggregate website usage information through Google Analytics if you consent."
+      },
+      {
+        "title": "Why we collect it",
+        "text": "Contact form data is used only to respond to your request. Analytics data is used to understand website traffic and improve content."
+      },
+      {
+        "title": "Consent and cookies",
+        "text": "Non-essential analytics cookies are loaded only after explicit consent via the cookie banner. You can refuse analytics cookies without affecting core website access."
+      },
+      {
+        "title": "Retention and protection",
+        "text": "Personal information is retained only as long as necessary for the stated purpose and is protected with reasonable security measures."
+      },
+      {
+        "title": "Your rights",
+        "text": "You may request access, correction, or deletion of your personal information, subject to applicable legal requirements."
+      }
+    ],
+    "contact": "For privacy requests, use the contact page.",
+    "home": "Back to home"
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "updated": "Last updated: April 30, 2026",
+    "intro": "This page explains how cookies are used on this website.",
+    "cookies": [
+      "Essential cookies: required for core website functionality.",
+      "Analytics cookies (Google Analytics): used only with your consent to measure visits and interactions."
+    ],
+    "rights": "You can accept or reject analytics cookies using the cookie banner. If you previously consented, you can clear your browser storage to reset your choice.",
+    "home": "Back to home"
   }
 }
