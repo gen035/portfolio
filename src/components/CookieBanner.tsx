@@ -33,7 +33,34 @@ export default function CookieBanner({ lang, content }: CookieBannerProps) {
     setVisible(false)
   }
 
-  if (!visible) return null
+  const clearAllCookies = () => {
+    document.cookie.split(';').forEach((c) => {
+      const eqPos = c.indexOf('=')
+      const name = eqPos > -1 ? c.substring(0, eqPos).trim() : c.trim()
+      if (name) {
+        document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`
+        document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;domain=${document.location.hostname};`
+      }
+    })
+  }
+
+  const handleRejectCookies = () => {
+    clearAllCookies()
+    saveConsent('rejected')
+  }
+
+  if (!visible)
+    return (
+      <button
+        type="button"
+        className="cookie-banner-tab"
+        onClick={() => setVisible(true)}
+        aria-label={content.title}
+        title={content.title}
+      >
+        🍪
+      </button>
+    )
 
   return (
     <aside className="cookie-banner" role="dialog" aria-live="polite" aria-label={content.title}>
@@ -47,7 +74,7 @@ export default function CookieBanner({ lang, content }: CookieBannerProps) {
         <button type="button" className="button w-full" onClick={() => saveConsent('accepted')}>
           <span>{content.accept}</span>
         </button>
-        <button type="button" className="button w-full" onClick={() => saveConsent('rejected')}>
+        <button type="button" className="button w-full" onClick={() => handleRejectCookies()}>
           <span>{content.reject}</span>
         </button>
       </div>

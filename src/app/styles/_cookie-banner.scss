@@ -43,3 +43,31 @@
   }
 }
 
+.cookie-banner-tab {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  background: rgba(13, 13, 13, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+
+  &:hover {
+    background: rgba(13, 13, 13, 0.4);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
