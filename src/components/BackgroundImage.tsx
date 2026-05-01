@@ -1,63 +1,51 @@
 "use client";
 import { FC, useEffect, useState } from 'react';
-import axios from 'axios';
 
 interface UnsplashImage {
   id: string;
   urls: {
     regular: string;
   };
-  alt_description: string;
   width: number;
   height: number;
 }
+
+const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1726963121821-ba51f2cc4c10?q=50&w=2000";
+
 const BackgroundImage: FC = () => {
-  const [images, setImages] = useState<UnsplashImage[]>([]);
-  const [styles, setStyles] = useState({ 
-    backgroundImage: "url('https://images.unsplash.com/photo-1726963121821-ba51f2cc4c10?q=50&w=2000')", 
-    filter: "blur(5px)",
-    animation: ""
-  });
+  const [backgroundUrl, setBackgroundUrl] = useState<string>(DEFAULT_IMAGE);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get<UnsplashImage[]>(
-          `https://api.unsplash.com/users/gen035/photos`,
-          {
-            params: {
-              client_id: 'bl4vu5C9jNQf2iHhnkdIXn-KpqWYEzRCn4td8CG71bQ',
-              per_page: 50
-            },
-          }
+        const response = await fetch(
+          'https://api.unsplash.com/users/gen035/photos?per_page=50&client_id=bl4vu5C9jNQf2iHhnkdIXn-KpqWYEzRCn4td8CG71bQ'
         );
 
-        // Filter only horizontal images (width > height)
-        const horizontalImages = response.data.filter(
-          (image) => image.width > image.height
-        );
+        if (!response.ok) {
+          throw new Error(`Unsplash request failed: ${response.status}`);
+        }
 
-        setImages(horizontalImages);        
-      } catch (error:any) {
-        console.error('Error fetching images:', error.message);
+        const data: UnsplashImage[] = await response.json();
+        const horizontalImages = data.filter((image) => image.width > image.height);
+
+        if (horizontalImages.length > 0) {
+          const randomIndex = Math.floor(Math.random() * horizontalImages.length);
+          setBackgroundUrl(horizontalImages[randomIndex].urls.regular);
+        }
+      } catch (error: any) {
+        console.error('Error fetching images:', error?.message ?? error);
       }
     };
 
     fetchImages();
   }, []);
 
-  useEffect(() => {
-    const current = Math.floor(Math.random() * images.length + 1);
-    const url = images && images.length > 0 && images[current] && images[current].urls.regular;
-
-    if(url) {
-      setStyles({
-        backgroundImage: `url(${url})`,
-        animation: 'blurAnimation 1s normal ease-in-out',
-        filter: ""
-      })
-    }
-  }, [images]);
+  const styles = {
+    backgroundImage: `url(${backgroundUrl})`,
+    filter: backgroundUrl === DEFAULT_IMAGE ? 'blur(5px)' : undefined,
+    animation: backgroundUrl === DEFAULT_IMAGE ? undefined : 'blurAnimation 1s normal ease-in-out'
+  };
 
   return (
     <>
