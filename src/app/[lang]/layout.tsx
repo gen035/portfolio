@@ -42,7 +42,6 @@ export default async function RootLayout({
         <BackgroundImages />
         <SocialMediaLinks />
         {children}
-
         <CookieBanner lang={params.lang} content={cookieBanner} />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
         <Analytics />

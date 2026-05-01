@@ -27,7 +27,7 @@
     "description": "We use cookies and similar technologies to run this website and measure traffic with Google Analytics. You can accept or refuse non-essential analytics cookies.",
     "accept": "Accept cookies",
     "reject": "Reject cookies",
-
+    "close": "Close cookie banner",
     "privacy": "Privacy policy",
     "cookies": "Cookie policy"
   },

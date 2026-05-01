@@ -28,7 +28,8 @@
     "accept": "Accepter les témoins",
     "reject": "Refuser les témoins",
     "privacy": "Politique de confidentialité",
-    "cookies": "Politique de témoins"
+    "cookies": "Politique de témoins",
+    "close": "Fermer la bannière de témoins"
   },
   "privacyPolicy": {
     "title": "Politique de confidentialité",
