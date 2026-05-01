@@ -1,7 +1,7 @@
 {
   "intro": {
     "title": "Hi! I'm Gen 👋",
-    "description": "Software Development Team Lead - @ Ubisoft",
+    "description": "Software Development Team Lead II - @ Ubisoft",
     "description2": "",
     "available": "Available in ",
     "resume": "Download resumé"
@@ -25,8 +25,9 @@
   "cookieBanner": {
     "title": "Cookie preferences",
     "description": "We use cookies and similar technologies to run this website and measure traffic with Google Analytics. You can accept or refuse non-essential analytics cookies.",
-    "accept": "Accept analytics",
-    "reject": "Reject analytics",
+    "accept": "Accept cookies",
+    "reject": "Reject cookies",
+
     "privacy": "Privacy policy",
     "cookies": "Cookie policy"
   },
