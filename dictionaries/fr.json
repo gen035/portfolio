@@ -2,7 +2,7 @@
   "intro": {
     "title": "Hey! 👋",
     "description": "Genevieve Perron Migneron",
-    "description2": "Chef d'équipe informatique - @ Ubisoft",
+    "description2": "Chef d'équipe informatique II - @ Ubisoft",
     "available": "Disponible en ",
     "resume": "Télécharger mon CV"
   },
@@ -25,10 +25,11 @@
   "cookieBanner": {
     "title": "Préférences de témoins",
     "description": "Nous utilisons des témoins et technologies similaires pour faire fonctionner ce site et mesurer l'audience avec Google Analytics. Vous pouvez accepter ou refuser les témoins analytiques non essentiels.",
-    "accept": "Accepter les témoins analytiques",
-    "reject": "Refuser les témoins analytiques",
+    "accept": "Accepter les témoins",
+    "reject": "Refuser les témoins",
     "privacy": "Politique de confidentialité",
-    "cookies": "Politique de témoins"
+    "cookies": "Politique de témoins",
+    "close": "Fermer la bannière de témoins"
   },
   "privacyPolicy": {
     "title": "Politique de confidentialité",

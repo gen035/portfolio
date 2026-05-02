@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { FaTimes } from 'react-icons/fa'
 
 type CookieBannerContent = {
   title: string
   description: string
   accept: string
   reject: string
+  close: string
   privacy: string
   cookies: string
 }
@@ -30,6 +32,10 @@ export default function CookieBanner({ lang, content }: CookieBannerProps) {
   const saveConsent = (value: 'accepted' | 'rejected') => {
     window.localStorage.setItem(CONSENT_KEY, value)
     window.dispatchEvent(new Event('cookie-consent-updated'))
+    setVisible(false)
+  }
+
+  const closeBanner = () => {
     setVisible(false)
   }
 
@@ -64,6 +70,14 @@ export default function CookieBanner({ lang, content }: CookieBannerProps) {
 
   return (
     <aside className="cookie-banner" role="dialog" aria-live="polite" aria-label={content.title}>
+      <button
+        type="button"
+        className="cookie-banner-close"
+        onClick={closeBanner}
+        aria-label={content.close}
+      >
+        <FaTimes aria-hidden="true" />
+      </button>
       <h2>{content.title}</h2>
       <p>{content.description}</p>
       <div className="cookie-banner-links">
