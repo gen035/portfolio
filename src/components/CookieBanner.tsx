@@ -9,6 +9,7 @@ type CookieBannerContent = {
   description: string
   accept: string
   reject: string
+  close: string
   privacy: string
   cookies: string
 }
