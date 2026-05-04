@@ -142,10 +142,6 @@ The site uses Next.js locale routing. URLs follow the pattern:
 
 Locale detection is handled via [next-translate](https://github.com/vinissimus/next-translate) and custom middleware.
 
-## 📝 License
-
-[MIT License](LICENSE) - feel free to use this as a template!
-
 ## 🙋 Questions?
 
 Feel free to reach out via the [contact form](https://gen-migneron.com/contact) or check out my [GitHub](https://github.com/gen035).
