@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { track } from '@vercel/analytics';
 import emailjs from 'emailjs-com';
 
@@ -16,6 +16,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ form }) => {
   const [bamboozled, setBamboozled] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formSent, setFormSent] = useState<boolean>(false);
+
+  const trackGaEvent = (eventName: string) => {
+    if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+      return;
+    }
+
+    window.gtag('event', eventName, {
+      event_category: 'contact',
+      event_label: 'contact_form',
+    });
+  }
 
   const validateForm = () => {
     if (!name || !subject || !message || !email) {
@@ -57,12 +68,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ form }) => {
       .then((response) => {
         console.log('Email sent successfully:', response);
         track('Email sent');
+        trackGaEvent('contact_form_submit_success');
         setFormSent(true);
         // Handle success
       })
       .catch((error) => {
         console.error('Email send failed:', error);
         track('Email error');
+        trackGaEvent('contact_form_submit_error');
         setError('Failed to send email. Please try again later.');
         // Handle error
       })
