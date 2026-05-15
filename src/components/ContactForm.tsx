@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { track } from '@vercel/analytics';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 interface ContactFormProps {
   form: any;
