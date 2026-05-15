@@ -18,12 +18,10 @@ const BackgroundImage: FC = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(
-          'https://api.unsplash.com/users/gen035/photos?per_page=50&client_id=bl4vu5C9jNQf2iHhnkdIXn-KpqWYEzRCn4td8CG71bQ'
-        );
+        const response = await fetch('/api/photos');
 
         if (!response.ok) {
-          throw new Error(`Unsplash request failed: ${response.status}`);
+          throw new Error(`Photos request failed: ${response.status}`);
         }
 
         const data: UnsplashImage[] = await response.json();
