@@ -1,20 +1,5 @@
 import React, { FC } from 'react';
-import { FaHtml5, FaCss3Alt, FaSass, FaJsSquare, FaReact, FaAngular, FaVuejs} from 'react-icons/fa';
-
-interface Skill {
-  name: string;
-  icon: React.ReactElement;
-}
-
-const skillsData: Skill[] = [
-  { name: 'HTML', icon: <FaHtml5 /> },
-  { name: 'CSS', icon: <FaCss3Alt /> },
-  { name: 'Sass', icon: <FaSass /> },
-  { name: 'JavaScript', icon: <FaJsSquare /> },
-  { name: 'React', icon: <FaReact /> },
-  { name: 'Angular', icon: <FaAngular /> },
-  { name: 'Vue', icon: <FaVuejs /> },
-];
+import { skillsData } from '@/data/skills';
 
 const SkillsList: FC = () => {
   return (
