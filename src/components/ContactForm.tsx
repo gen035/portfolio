@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { track } from '@vercel/analytics';
 import emailjs from '@emailjs/browser';
 import type { Dictionary } from '@/lib/dictionary';
