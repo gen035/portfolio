@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from 'react';
 import { track } from '@vercel/analytics';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
+import type { Dictionary } from '@/lib/dictionary';
 
 interface ContactFormProps {
-  form: any;
+  form: Dictionary['contact'];
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ form }) => {
